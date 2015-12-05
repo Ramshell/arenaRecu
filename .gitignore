@@ -1,8 +1,10 @@
 target
 .project
 *.classpath
-/src/main/generated-sources/
-/src/main/generated-sources/**
+recuperatorio_dominio/src/main/generated-sources/
+recuperatorio_dominio/src/main/generated-sources/**
+recuperatorio_arena/src/main/generated-sources/
+recuperatorio_arena/src/main/generated-sources/**
 /src/test/generated-sources/
 /src/test/generated-sources/**
 .settings

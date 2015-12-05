@@ -1,9 +1,9 @@
 package encuestador
 
 import org.uqbar.arena.Application
+import recuperatorio_dominio.unq.appModel.EncuestasAppModel
 import recuperatorio_dominio.unq.encuesta.Carrera
 import recuperatorio_dominio.unq.encuesta.Materia
-import recuperatorio_dominio.unq.appModel.EncuestasAppModel
 
 class Encuestador extends Application{
 	
