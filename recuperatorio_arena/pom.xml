@@ -5,4 +5,26 @@
   <version>0.0.1-SNAPSHOT</version>
   <name>recuperatorio_arena</name>
   <description>recuperatorio del trabajo practico de arena</description>
+  
+  <parent>
+		<groupId>org.uqbar-project</groupId>
+		<artifactId>uqbar-xtend-parent</artifactId>
+		<version>2.7.3</version>
+	</parent>
+  
+  
+  <dependencies>
+		<dependency>
+			<groupId>org.recuperatorio_dominio</groupId>
+  			<artifactId>recuperatorio_dominio</artifactId>
+  			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.uqbar-project</groupId>
+			<artifactId>arena-jface</artifactId>
+			<version>3.6.0</version>
+		</dependency>
+	</dependencies>
+  
+  
 </project>
