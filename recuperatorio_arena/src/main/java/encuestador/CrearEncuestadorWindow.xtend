@@ -39,6 +39,10 @@ class CrearEncuestadorWindow extends SimpleWindow<EncuestasAppModel>{
 		mainPanel.layout = new VerticalLayout 
 		
 		crearInicioDeEncuesta(mainPanel)
+		new Label(mainPanel) => [
+			text = "* camposObligatorios"
+			fontSize = 8
+		]	
 		val panelDeAgregarMateria = new Panel(mainPanel)
 		panelDeAgregarMateria.setLayout(new ColumnLayout(2))
 		val verticalDeAgregarMateria = new Panel(panelDeAgregarMateria)
@@ -52,7 +56,12 @@ class CrearEncuestadorWindow extends SimpleWindow<EncuestasAppModel>{
 			caption = "Enviar encuesta"
 			bindEnabledToProperty = "respuestaDeLaEncuesta.esValida"
 		]
-		botonDeEnvio.onClick([|modelObject.enviarEncuesta()])	
+		botonDeEnvio.onClick([|
+			modelObject.enviarEncuesta();
+			showInfo(modelObject.getSuccessfullTitle());
+		])
+		
+		
 	}
 	
 	def crearSeleccionDeMateria(Panel mainPanel) {
@@ -74,11 +83,11 @@ class CrearEncuestadorWindow extends SimpleWindow<EncuestasAppModel>{
 	def crearInicioDeEncuesta(Panel mainPanel) {
 		new LabelYSelectorVertical(mainPanel,"Seleccioná una carrera","carreras",Carrera,"nombre","respuestaDeLaEncuesta.carrera")
 		
-		new LabelYEditTextVertical(mainPanel,"Año en el que ingresaste a la facu","respuestaDeLaEncuesta.añoDeIngreso",new DateTextFilter,new DateAdapter)
+		new LabelYEditTextVertical(mainPanel,"* Año en el que ingresaste a la facu","respuestaDeLaEncuesta.añoDeIngreso",new DateTextFilter,new DateAdapter)
 		new LabelYEditTextVertical(mainPanel,"¿Cuantos finales aprobaste?","respuestaDeLaEncuesta.finalesAprobados",null,null)
 		new LabelYEditTextVertical(mainPanel,"¿Cuantos finales desaprobaste?","respuestaDeLaEncuesta.finalesDesaprobados",null,null)
 		new LabelYEditTextVertical(mainPanel,"¿Cuantos cursadas aprobaste?","respuestaDeLaEncuesta.cursadasAprobadas",null,null)
-		new LabelYEditTextVertical(mainPanel,"Ingresa tu e-mail","respuestaDeLaEncuesta.mailDelEncuestado",null,null)
+		new LabelYEditTextVertical(mainPanel,"* Ingresa tu e-mail","respuestaDeLaEncuesta.mailDelEncuestado",null,null)
 	}
 	
 	def private crearTablaDeMaterias(Panel verticalDeTablaDeMateria) {

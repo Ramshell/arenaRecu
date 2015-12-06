@@ -75,4 +75,8 @@ class EncuestasAppModel {
 		respuestaDeLaEncuesta = new RespuestaDeLaEncuesta()
 	}
 	
+	def getSuccessfullTitle() {
+		return "Gracias por llenar la encuesta!"
+	}
+	
 }

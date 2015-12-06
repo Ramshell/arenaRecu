@@ -15,4 +15,11 @@ class IntencionDeCursada {
 		this.turno = turno
 	}
 	
+	override boolean equals(Object o){
+		if(o!= null && o instanceof IntencionDeCursada){
+			var intencionDeCursada = o as IntencionDeCursada
+			intencionDeCursada.materia.descripcion == this.materia.descripcion
+		}else false
+	}
+	
 }
