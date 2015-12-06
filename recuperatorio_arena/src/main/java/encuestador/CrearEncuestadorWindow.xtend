@@ -50,7 +50,7 @@ class CrearEncuestadorWindow extends SimpleWindow<EncuestasAppModel>{
 		
 		var botonDeEnvio = new Button(mainPanel) => [
 			caption = "Enviar encuesta"
-			bindEnabledToProperty = "puedeEnviarEncuesta"
+			bindEnabledToProperty = "respuestaDeLaEncuesta.esValida"
 		]
 		botonDeEnvio.onClick([|modelObject.enviarEncuesta()])	
 	}
