@@ -1,24 +1,21 @@
 package componentes
 
-import org.uqbar.arena.layout.VerticalLayout
-import org.uqbar.arena.widgets.Container
-import org.uqbar.arena.widgets.Panel
-import org.uqbar.arena.widgets.Label
-import org.uqbar.arena.widgets.Selector
 import org.uqbar.arena.bindings.PropertyAdapter
+import org.uqbar.arena.widgets.Label
+import org.uqbar.arena.widgets.Panel
+import org.uqbar.arena.widgets.Selector
 
 class LabelYSelectorVertical extends Panel {
 	
 	
-	new(Container container,String textLabel, String nombreDeLaListaDelSelector,Class claseDelSelector,String propiedadAMostrar,String propiedadABindear) {
+	new(Panel container,String textLabel, String nombreDeLaListaDelSelector,Class claseDelSelector,String propiedadAMostrar,String propiedadABindear) {
 		super(container)
 		
-		this.layout = new VerticalLayout() =>[
 			
-			new Label(this) =>[
+			new Label(container) =>[
 				text = textLabel
 			]
-			new Selector(this) => [
+			new Selector(container) => [
 				allowNull = false
 				if (propiedadAMostrar != null)
 					bindItemsToProperty(nombreDeLaListaDelSelector).adapter = new PropertyAdapter(claseDelSelector, propiedadAMostrar)
@@ -28,7 +25,6 @@ class LabelYSelectorVertical extends Panel {
 			]
 		
 		
-		]
 	}
 	
 	

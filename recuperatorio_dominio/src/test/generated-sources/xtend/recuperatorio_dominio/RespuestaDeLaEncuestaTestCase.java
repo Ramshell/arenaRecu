@@ -4,11 +4,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+
 import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.uqbar.commons.model.UserException;
+
 import recuperatorio_dominio.unq.encuesta.Carrera;
 import recuperatorio_dominio.unq.encuesta.IntencionDeCursada;
 import recuperatorio_dominio.unq.encuesta.Materia;

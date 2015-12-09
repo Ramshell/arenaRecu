@@ -11,21 +11,19 @@ import org.uqbar.arena.widgets.TextFilter
 class LabelYEditTextVertical extends Panel {
 	
 	
-	new(Container container,String textLabel, String nombreDeLaPropiedad,TextFilter filter,Transformer transformer) {
+	new(Panel container,String textLabel, String nombreDeLaPropiedad,TextFilter filter,Transformer transformer) {
 		super(container)
+
 		
-		this.layout = new VerticalLayout() =>[
-		
-			new Label(this) => [
+			new Label(container) => [
 				text = textLabel
 			]
-			new TextBox(this) => [
+			new TextBox(container) => [
 				if(filter != null) withFilter(filter)
 				var bind =bindValueToProperty(nombreDeLaPropiedad)
 				if(transformer != null) bind.transformer = transformer
 			]
 		
-		]
 	}
 	
 	

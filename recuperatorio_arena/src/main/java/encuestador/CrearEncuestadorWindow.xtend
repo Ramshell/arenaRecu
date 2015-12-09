@@ -40,9 +40,11 @@ class CrearEncuestadorWindow extends SimpleWindow<EncuestasAppModel>{
 		
 		crearInicioDeEncuesta(mainPanel)
 		new Label(mainPanel) => [
-			text = "* camposObligatorios"
+			text = "* Campos obligatorios"
 			fontSize = 8
-		]	
+		]
+		
+		
 		val panelDeAgregarMateria = new Panel(mainPanel)
 		panelDeAgregarMateria.setLayout(new ColumnLayout(2))
 		val verticalDeAgregarMateria = new Panel(panelDeAgregarMateria)
@@ -64,6 +66,16 @@ class CrearEncuestadorWindow extends SimpleWindow<EncuestasAppModel>{
 		
 	}
 	
+	def crearInicioDeEncuesta(Panel mainPanel) {
+		new LabelYSelectorVertical(mainPanel,"Seleccioná una carrera","carreras",Carrera,"nombre","respuestaDeLaEncuesta.carrera")
+		
+		new LabelYEditTextVertical(mainPanel,"* Año en el que ingresaste a la facu","respuestaDeLaEncuesta.añoDeIngreso",new DateTextFilter,new DateAdapter)
+		new LabelYEditTextVertical(mainPanel,"¿Cuantos finales aprobaste?","respuestaDeLaEncuesta.finalesAprobados",null,null)
+		new LabelYEditTextVertical(mainPanel,"¿Cuantos finales desaprobaste?","respuestaDeLaEncuesta.finalesDesaprobados",null,null)
+		new LabelYEditTextVertical(mainPanel,"¿Cuantos cursadas aprobaste?","respuestaDeLaEncuesta.cursadasAprobadas",null,null)
+		new LabelYEditTextVertical(mainPanel,"* Ingresa tu e-mail","respuestaDeLaEncuesta.mailDelEncuestado",null,null)
+	}
+	
 	def crearSeleccionDeMateria(Panel mainPanel) {
 		
 		new LabelYSelectorVertical(mainPanel,"Materia que estás pensando cursar","respuestaDeLaEncuesta.carrera.materias",Materia,"descripcion","materiaSeleccionada")
@@ -80,15 +92,7 @@ class CrearEncuestadorWindow extends SimpleWindow<EncuestasAppModel>{
 		mainPanel
 	}
 	
-	def crearInicioDeEncuesta(Panel mainPanel) {
-		new LabelYSelectorVertical(mainPanel,"Seleccioná una carrera","carreras",Carrera,"nombre","respuestaDeLaEncuesta.carrera")
-		
-		new LabelYEditTextVertical(mainPanel,"* Año en el que ingresaste a la facu","respuestaDeLaEncuesta.añoDeIngreso",new DateTextFilter,new DateAdapter)
-		new LabelYEditTextVertical(mainPanel,"¿Cuantos finales aprobaste?","respuestaDeLaEncuesta.finalesAprobados",null,null)
-		new LabelYEditTextVertical(mainPanel,"¿Cuantos finales desaprobaste?","respuestaDeLaEncuesta.finalesDesaprobados",null,null)
-		new LabelYEditTextVertical(mainPanel,"¿Cuantos cursadas aprobaste?","respuestaDeLaEncuesta.cursadasAprobadas",null,null)
-		new LabelYEditTextVertical(mainPanel,"* Ingresa tu e-mail","respuestaDeLaEncuesta.mailDelEncuestado",null,null)
-	}
+	
 	
 	def private crearTablaDeMaterias(Panel verticalDeTablaDeMateria) {
 		val table = new Table<IntencionDeCursada>(verticalDeTablaDeMateria, typeof(IntencionDeCursada)) => [
