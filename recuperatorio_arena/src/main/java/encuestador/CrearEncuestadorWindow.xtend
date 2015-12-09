@@ -20,6 +20,7 @@ import recuperatorio_dominio.unq.encuesta.IntencionDeCursada
 import recuperatorio_dominio.unq.encuesta.Materia
 import recuperatorio_dominio.unq.encuesta.Turno
 import org.uqbar.arena.widgets.Button
+import extra.NumberTextFilter
 
 class CrearEncuestadorWindow extends SimpleWindow<EncuestasAppModel>{
 	
@@ -69,10 +70,10 @@ class CrearEncuestadorWindow extends SimpleWindow<EncuestasAppModel>{
 	def crearInicioDeEncuesta(Panel mainPanel) {
 		new LabelYSelectorVertical(mainPanel,"Seleccioná una carrera","carreras",Carrera,"nombre","respuestaDeLaEncuesta.carrera")
 		
-		new LabelYEditTextVertical(mainPanel,"* Año en el que ingresaste a la facu","respuestaDeLaEncuesta.añoDeIngreso",new DateTextFilter,new DateAdapter)
-		new LabelYEditTextVertical(mainPanel,"¿Cuantos finales aprobaste?","respuestaDeLaEncuesta.finalesAprobados",null,null)
-		new LabelYEditTextVertical(mainPanel,"¿Cuantos finales desaprobaste?","respuestaDeLaEncuesta.finalesDesaprobados",null,null)
-		new LabelYEditTextVertical(mainPanel,"¿Cuantos cursadas aprobaste?","respuestaDeLaEncuesta.cursadasAprobadas",null,null)
+		new LabelYEditTextVertical(mainPanel,"* Fecha en que ingresaste a la facu","respuestaDeLaEncuesta.añoDeIngreso",new DateTextFilter,new DateAdapter)
+		new LabelYEditTextVertical(mainPanel,"¿Cuantos finales aprobaste?","respuestaDeLaEncuesta.finalesAprobados",new NumberTextFilter,null)
+		new LabelYEditTextVertical(mainPanel,"¿Cuantos finales desaprobaste?","respuestaDeLaEncuesta.finalesDesaprobados",new NumberTextFilter,null)
+		new LabelYEditTextVertical(mainPanel,"¿Cuantos cursadas aprobaste?","respuestaDeLaEncuesta.cursadasAprobadas",new NumberTextFilter,null)
 		new LabelYEditTextVertical(mainPanel,"* Ingresa tu e-mail","respuestaDeLaEncuesta.mailDelEncuestado",null,null)
 	}
 	
